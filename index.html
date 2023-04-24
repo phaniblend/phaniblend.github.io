@@ -24,7 +24,8 @@
       <div class="row">
         <div class="col">
           <label for="inputString" class="form-label">Enter the text to split:</label>
-          <textarea class="form-control" id="inputString"></textarea>
+          <textarea class="form-control" id="inputString" oninput="updateStringLength()"></textarea>
+          <p id="stringLength"></p>
         </div>
       </div>
       <div class="row">
@@ -58,6 +59,11 @@
       <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 
    <script>
+       function updateStringLength() {
+    const inputString = document.getElementById('inputString').value;
+    const strLength = inputString.length;
+    document.getElementById('stringLength').textContent = `Length: ${strLength}`;
+  }
 function splitString() {
   // Get the input string and character limit
   const inputString = document.getElementById('inputString').value;

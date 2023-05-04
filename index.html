@@ -82,7 +82,7 @@ function splitString() {
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
     const blob = new Blob([chunk], { type: 'text/plain;charset=utf-8' });
-    const filename = `${filePrefix}_${i}.txt`;
+    const filename = `${filePrefix}_${i+1}.txt`;
     saveAs(blob, filename);
   }
 }
